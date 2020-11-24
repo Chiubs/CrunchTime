@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.scss';
 import React from "react";
 import { Login, Register } from "./Components/Login/index";
+//import bg from "./CalendarMark.jpg";
 
 
 class App extends React.Component {
@@ -29,33 +30,43 @@ class App extends React.Component {
     }
     this.setState(prevState => ({ isLogginActive: !prevState.isLogginActive }));
   }
+ 
+  
+  
 
   render() {
     const { isLogginActive } = this.state;
     const current = isLogginActive ? "Register" : "Login";
     const currentActive = isLogginActive ? "login" : "register";
     return (
-      <div className="App">
-        <div className="login">
-          <div className="container" ref={ref => (this.container = ref)}>
-            {isLogginActive && (
-              <Login containerRef={ref => (this.current = ref)} />
-            )}
-            {!isLogginActive && (
-              <Register containerRef={ref => (this.current = ref)} />
-            )}
+      <div className="containerBG">
+        <div className="App">
+          <div className="login">
+            <div className="container" ref={ref => (this.container = ref)}>
+              {isLogginActive && (
+                <Login containerRef={ref => (this.current = ref)} />
+              )}
+              {!isLogginActive && (
+                <Register containerRef={ref => (this.current = ref)} />
+              )}
+            </div>
+            <RightSide
+              current={current}
+              currentActive={currentActive}
+              containerRef={ref => (this.rightSide = ref)}
+              onClick={this.changeState.bind(this)}
+            />
           </div>
-          <RightSide
-            current={current}
-            currentActive={currentActive}
-            containerRef={ref => (this.rightSide = ref)}
-            onClick={this.changeState.bind(this)}
-          />
+          
         </div>
       </div>
     );
   }
 }
+
+
+
+
 
 const RightSide = props => {
   return (

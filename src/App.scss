@@ -42,6 +42,13 @@
   }
 }
 
+
+.containerBG{
+  background-image: url(./CalendarMark.jpg);
+  
+
+} 
+
 //Login Main Container
 .login {
   width: 27em;
@@ -67,6 +74,7 @@
     z-index: 99;
     padding: 17px 10px;
     transition: transform 200ms ease-in-out;
+    
   }
   .right-side {
     display: flex;
