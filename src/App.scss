@@ -44,7 +44,22 @@
 
 
 .containerBG{
-  background-image: url(./CalendarMark.jpg);
+  background-image: url(./backgroundyellow.jpg) ;
+  position: fixed;
+  display: flex;
+  z-index: 0;
+  top: 0;
+  left: 0;
+
+  min-width: 100%;
+  min-height: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
+  
+
   
 
 } 
@@ -52,13 +67,15 @@
 //Login Main Container
 .login {
   width: 27em;
-  height: 35em;
-  min-height: 50em;
+  height: 50em;
+  min-height: 35em;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 10px;
-  position: relative;
+  margin-top: 20px;
+  position: absolute;
+  top: 15px;
+  right: 200px;
   z-index: 99;
   .container {
     display: flex;
@@ -69,10 +86,10 @@
     border-radius: 4px;
     position: relative;
     z-index: 99;
-    width: 100%;
+    width: 90%;
     height: 100%;
     z-index: 99;
-    padding: 17px 10px;
+    padding: 0px 0px;
     transition: transform 200ms ease-in-out;
     
   }
@@ -80,22 +97,22 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 90%;
+    height: 65%;
     background-color: #3498db;
-    width: 100%;
+    width: 90%;
     position: absolute;
     right: -34%;
     border-radius: 6px;
     z-index: 1;
-    transition: all 400ms ease-in-out;
+    transition: all 200ms ease-in-out;
     cursor: pointer;
     box-shadow: 0px 0px 12px 2px rgba(15, 15, 15, 0.281);
 
     &.right {
-      right: -40%;
+      right: -30%;
       align-items: flex-end;
       &:hover {
-        right: -45%;
+        right: -35%;
       }
     }
     &.left {
@@ -110,7 +127,7 @@
       font-size: 21px;
       font-weight: 500;
       color: #fff;
-      margin-right: 3em;
+      margin-right: 2em;
       margin-left: 3em;
     }
   }

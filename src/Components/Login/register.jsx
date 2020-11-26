@@ -18,6 +18,13 @@ render(){
             </div>
             <div className="form">
             <div className="form-group">
+                    <label htmlFor="First Name">First Name</label>
+                    <input type="First Name" name="First Name" placeholder="First Name"/>
+                </div><div className="form-group">
+                    <label htmlFor="Last Name">Last Name</label>
+                    <input type="Last Name" name="Last Name" placeholder="Last Name"/>
+                </div>
+            <div className="form-group">
                     <label htmlFor="Email">Email</label>
                     <input type="email" name="Email" placeholder="Email"/>
                 </div>

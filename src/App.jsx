@@ -1,8 +1,9 @@
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.scss';
 import React from "react";
 import { Login, Register } from "./Components/Login/index";
 //import bg from "./CalendarMark.jpg";
+//import { BrowserRouter, Route, Link } from "react-router-dom";
 
 
 class App extends React.Component {
@@ -40,6 +41,7 @@ class App extends React.Component {
     const currentActive = isLogginActive ? "login" : "register";
     return (
       <div className="containerBG">
+        
         <div className="App">
           <div className="login">
             <div className="container" ref={ref => (this.container = ref)}>

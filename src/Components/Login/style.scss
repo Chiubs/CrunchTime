@@ -7,6 +7,11 @@
 
         .header {
             font-size: 24px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            right: 0px;
+            
             font-family: 'Nerko One', cursive;
 
         }
@@ -16,7 +21,11 @@
             flex-direction: column;
         
             .image{
-                width: 21em;
+                width: 6em;
+                display:flex;
+                align-items: center;
+                position: relative;
+                right: -107px;
                 img{
                     width: 100%;
                     height: 100%;
@@ -48,7 +57,7 @@
                         border: 0;
                         border-radius: 4px;
                         margin-bottom: 31px;
-                        transition: all 250ms ease-in-out;
+                        transition: all 150ms ease-in-out;
                         &:focus{
                             outline: none;
                             box-shadow: 0px 9px 12px 0.8px #0e81ce96
