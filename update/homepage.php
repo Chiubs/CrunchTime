@@ -1,0 +1,129 @@
+
+<?php
+//homepage.php
+session_start();
+
+?>
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>Time Crunch Planner</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
+  <script>
+
+  $(document).ready(function() {
+   var calendar = $('#calendar').fullCalendar({
+    editable:true,
+    header:{
+     left:'prev,next today',
+     center:'title',
+     right:'month,agendaWeek,agendaDay'
+    },
+    events: 'load.php',
+    selectable:true,
+    selectHelper:true,
+    select: function(start, end, allDay)
+    {
+      var r = confirm("Would you like to add an event?");
+     if(r == true)
+     {
+      //var title = prompt("Enter Event Title");
+      var start = $.fullCalendar.formatDate(start, "Y-MM-DD");
+      var end = $.fullCalendar.formatDate(end, "Y-MM-DD");
+      //var start = $.fullCalendar.formatDate(start, "Y-MM-DD HH:mm:ss");
+      //var end = $.fullCalendar.formatDate(end, "Y-MM-DD HH:mm:ss");
+      $.ajax({
+            url : "insert.php",
+       //url:"eventForm.php",
+       type:"POST",
+       data:{start:start, end:end},
+       //data:{title:title, start:start, end:end},
+
+       success:function()
+       {
+             location.href = "eventForm.php";
+             //calendar.fullCalendar('refetchEvents');
+             //alert("Added Successfully");
+       }
+      })
+     }
+},
+
+    editable:true,
+    eventResize:function(event)
+    {
+     var start = $.fullCalendar.formatDate(event.start, "Y-MM-DD HH:mm:ss");
+     var end = $.fullCalendar.formatDate(event.end, "Y-MM-DD HH:mm:ss");
+     var title = event.title;
+     var id = event.id;
+     $.ajax({
+      url:"update.php",
+      type:"POST",
+      data:{title:title, start:start, end:end, id:id},
+      success:function(){
+       calendar.fullCalendar('refetchEvents');
+       alert('Event Update');
+      }
+     })
+    },
+
+    eventDrop:function(event)
+    {
+     var start = $.fullCalendar.formatDate(event.start, "Y-MM-DD HH:mm:ss");
+     var end = $.fullCalendar.formatDate(event.end, "Y-MM-DD HH:mm:ss");
+     var title = event.title;
+     var id = event.id;
+     $.ajax({
+      url:"update.php",
+      type:"POST",
+      data:{title:title, start:start, end:end, id:id},
+      success:function()
+      {
+       calendar.fullCalendar('refetchEvents');
+       alert("Event Updated");
+      }
+     });
+    },
+
+    eventClick:function(event)
+    {
+     if(confirm("Are you sure you want to remove it?"))
+     {
+      var id = event.id;
+      $.ajax({
+       url:"delete.php",
+       type:"POST",
+       data:{id:id},
+       success:function()
+       {
+        calendar.fullCalendar('refetchEvents');
+        alert("Event Removed");
+       }
+      })
+     }
+    },
+
+   });
+  });
+
+  </script>
+ </head>
+ <body>
+  <br />
+  <h2 align="center"><a href="#">Time Crunch Planner</a></h2>
+  <br />
+  <?php
+      echo "Success! Logged in as " .$_SESSION['fname']. " " .$_SESSION['lname']. ". Your user ID is " .$_SESSION['userID']. " and your email is " .$_SESSION['email']. ".";
+  ?>
+  <!CHANGE LOCATION OF LOGOUT MENU>
+  <a href="logout.php" style="float: right;"> Sign Out</a>
+  <div class="container">
+   <div id="calendar"></div>
+  </div>
+ </body>
+</html>
