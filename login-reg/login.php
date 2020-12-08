@@ -65,11 +65,16 @@ else {
 
 <html lang="en" dir="ltr">
   <head>
+        
     <meta charset="utf-8">
     <title>Login</title>
-
-
-                         <h2>Login</h2>
+    <link rel ="stylesheet" type = "text/css" href = "style.css">
+</head>
+<link rel ="stylesheet" type = "text/css" href = "style.css">
+    <body>
+          <div class = "loginbox">
+                <img src = "CalendarMark.jpg" class = "avatar">
+                         <h1>Login</h1>
                               <p style = "color: red; text-align: center;" ><?php echo $errorMessage ?></p>
                             <form action = "login.php" method="post">
                                     <p><input type= "text" name = "username" placeholder = "username" required></p>
@@ -79,4 +84,4 @@ else {
                               <button onclick="document.location='register.php'">Register here</button>
                         </div>
             </div>
-</body>
+      </body>
