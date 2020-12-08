@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Nerko+One&display=swap');
 @import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,700&display=swap');
 
 body{
     position: fixed;
@@ -19,10 +20,10 @@ body{
 
 .registerbox{
     width: 320px;
-    height: 500px;
+    height: 620px;
     background: #ffa500;
     color: #fff;
-    top: 40%;
+    top: 50%;
     left: 50%;
     position: absolute;
     transform: translate(-50%, -50%);
@@ -47,7 +48,8 @@ h1{
     margin: 0;
     padding: 0 0 20px;
     text-align: center;
-    font-size:22px;
+    font-size:40px;
+    font-family: "Nerko One", sans-serif;
 }
 
 .registerbox p{
@@ -106,8 +108,44 @@ color: rgb(5, 0, 0);
 }
 
 .registerbox a:hover{
-    color: #050400;
+    color: #ffc107;
 }
 
 
+.titleFont {
+   
 
+    color: #e0eff2;
+    font: italic bold 100px 'Roboto', sans-serif;
+    text-shadow: -9px 3px 0 #3a50d9, -14px 7px 0 #0a0e27;
+    
+    position: absolute;
+    top:169px;
+    right: 369px;
+    line-height: 0;
+}
+
+
+.btn {
+    font-size: 21px;
+    border: 0;
+    background-color: #fb2525;
+    color: #fff;  
+    cursor: pointer;
+    position: relative;
+    border-radius: 24px;
+    padding: 5px 5px;
+    position: absolute;
+    left: 8%;
+    top: 98%;
+    width: 269px;
+
+  }
+
+.btn:hover
+{
+cursor: pointer;
+background: #ffc107;
+color: #000;
+
+}

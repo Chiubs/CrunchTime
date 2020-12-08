@@ -8,19 +8,15 @@
 </head>
 
 <body>
-  <h1>Registration</h1>
-  <div class="column1">
-    <img src="savePig.jpg" alt="save money!" id="box1">
-    <p id="box2">[INCENTIVE INSERT HERE]</p>
   </div>
-  <div class="column2">
-    <p id="box4">[INSPIRATIONAL QUOTE]</p>
-    <img src="quick.jpeg" alt="inspiration" id="box3">
-
-  </div>
-
+  <div class = titleFont>
+    <h2> Time </h2>
+    <h3> Crunch </h3>
+    <h4> Planner </h4>
+    </div>
   <div class="registerBox">
     <img src="CalendarMark.jpg" class="avatar">
+    <h1>Registration</h1>
     <div id="form">
       <form action="register.php" method="post">
         <div class="form-group">
@@ -48,9 +44,10 @@
           <label for="Email"> Email: </label>
           <input name="email" type="text" placeholder = "Email">
         </div>
-        <input type="submit" name="submit" id="submit">
-
+        <input type="submit" name="submit" id="submit"></input>
+       
       </form>
+      <button onclick="document.location='login.php'" class = "btn">Have an account?</button>
     </div>
   </div>
   </div>

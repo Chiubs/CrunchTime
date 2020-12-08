@@ -72,6 +72,11 @@ else {
 </head>
 <link rel ="stylesheet" type = "text/css" href = "style.css">
     <body>
+    <div class = titleFont>
+    <h2> Time </h2>
+    <h3> Crunch </h3>
+    <h4> Planner </h4>
+    </div>
           <div class = "loginbox">
                 <img src = "CalendarMark.jpg" class = "avatar">
                          <h1>Login</h1>
@@ -79,9 +84,9 @@ else {
                             <form action = "login.php" method="post">
                                     <p><input type= "text" name = "username" placeholder = "username" required></p>
                                     <p><input type= "password" name = "password" placeholder = "pin" required></p>
-                              <p><button type = "submit" name= "login-submit">Login</button></p>
+                              <p><button type = "submit" name= "login-submit" class = "btn" >Login</button></p>
                               </form>
-                              <button onclick="document.location='register.php'">Register here</button>
+                              <button onclick="document.location='register.php'" class = "btn" >Register here</button>
                         </div>
             </div>
       </body>
